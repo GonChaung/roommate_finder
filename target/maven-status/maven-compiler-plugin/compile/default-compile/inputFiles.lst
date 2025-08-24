@@ -7,10 +7,14 @@
 /Users/pandas/Desktop/JavaSpringProjects/roommate-finder-backend-clean/src/main/java/com/abac/roommatefinder/dto/LoginRequest.java
 /Users/pandas/Desktop/JavaSpringProjects/roommate-finder-backend-clean/src/main/java/com/abac/roommatefinder/dto/ProfileRequest.java
 /Users/pandas/Desktop/JavaSpringProjects/roommate-finder-backend-clean/src/main/java/com/abac/roommatefinder/dto/RegisterRequest.java
+/Users/pandas/Desktop/JavaSpringProjects/roommate-finder-backend-clean/src/main/java/com/abac/roommatefinder/dto/ReportRequest.java
 /Users/pandas/Desktop/JavaSpringProjects/roommate-finder-backend-clean/src/main/java/com/abac/roommatefinder/dto/ResetPasswordRequest.java
 /Users/pandas/Desktop/JavaSpringProjects/roommate-finder-backend-clean/src/main/java/com/abac/roommatefinder/entity/Profile.java
 /Users/pandas/Desktop/JavaSpringProjects/roommate-finder-backend-clean/src/main/java/com/abac/roommatefinder/entity/Report.java
+/Users/pandas/Desktop/JavaSpringProjects/roommate-finder-backend-clean/src/main/java/com/abac/roommatefinder/entity/ReportStatus.java
+/Users/pandas/Desktop/JavaSpringProjects/roommate-finder-backend-clean/src/main/java/com/abac/roommatefinder/entity/ReportType.java
 /Users/pandas/Desktop/JavaSpringProjects/roommate-finder-backend-clean/src/main/java/com/abac/roommatefinder/entity/User.java
+/Users/pandas/Desktop/JavaSpringProjects/roommate-finder-backend-clean/src/main/java/com/abac/roommatefinder/exception/GlobalExceptionHandler.java
 /Users/pandas/Desktop/JavaSpringProjects/roommate-finder-backend-clean/src/main/java/com/abac/roommatefinder/repository/ProfileRepository.java
 /Users/pandas/Desktop/JavaSpringProjects/roommate-finder-backend-clean/src/main/java/com/abac/roommatefinder/repository/ReportRepository.java
 /Users/pandas/Desktop/JavaSpringProjects/roommate-finder-backend-clean/src/main/java/com/abac/roommatefinder/repository/UserRepository.java

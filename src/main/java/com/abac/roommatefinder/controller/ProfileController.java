@@ -22,21 +22,21 @@ public class ProfileController {
 
     // createUserProfile(profileData)
     @PostMapping("/{userId}")
-    public ResponseEntity<?> create(@PathVariable Long userId, @Validated @RequestBody ProfileRequest req) {
+    public ResponseEntity<?> create(@PathVariable("userId") Long userId, @Validated @RequestBody ProfileRequest req) {
         Profile p = profileService.createProfile(userId, req);
         return ResponseEntity.ok(p);
     }
 
     // editUserProfile(userId, updatedProfileData)
     @PutMapping("/{userId}")
-    public ResponseEntity<?> edit(@PathVariable Long userId, @Validated @RequestBody ProfileRequest req) {
+    public ResponseEntity<?> edit(@PathVariable("userId") Long userId, @Validated @RequestBody ProfileRequest req) {
         Profile p = profileService.editProfile(userId, req);
         return ResponseEntity.ok(p);
     }
 
     // getUserProfile(userId)
     @GetMapping("/{userId}")
-    public ResponseEntity<?> get(@PathVariable Long userId) {
+    public ResponseEntity<?> get(@PathVariable("userId") Long userId) {
         Profile p = profileService.getProfile(userId);
         return ResponseEntity.ok(p);
     }

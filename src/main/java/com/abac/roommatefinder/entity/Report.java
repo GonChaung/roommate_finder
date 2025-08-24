@@ -1,35 +1,58 @@
 package com.abac.roommatefinder.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "reports")
+@Data
+@NoArgsConstructor  // Only keep this one
 public class Report {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long reportedUserId;
-    private Long reporterUserId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "reported_user_id", nullable = false)
+    private User reportedUser;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "reporter_user_id", nullable = false)
+    private User reporterUser;
+
+    @Column(nullable = false)
     private String reason;
+
+    @Column(columnDefinition = "TEXT")
+    private String description;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private ReportStatus status = ReportStatus.PENDING;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private ReportType type = ReportType.OTHER;
+
     private LocalDateTime createdAt = LocalDateTime.now();
+    private LocalDateTime resolvedAt;
+    private Long resolvedByUserId;
 
-    public Report() {}
-
-    public Report(Long reportedUserId, Long reporterUserId, String reason) {
-        this.reportedUserId = reportedUserId;
-        this.reporterUserId = reporterUserId;
+    // Custom constructors
+    public Report(User reportedUser, User reporterUser, String reason) {
+        this.reportedUser = reportedUser;
+        this.reporterUser = reporterUser;
         this.reason = reason;
+        this.status = ReportStatus.PENDING;
+        this.type = ReportType.OTHER;
+        this.createdAt = LocalDateTime.now();
     }
 
-    // getters and setters
-    public Long getId() { return id; }
-    public Long getReportedUserId() { return reportedUserId; }
-    public void setReportedUserId(Long reportedUserId) { this.reportedUserId = reportedUserId; }
-    public Long getReporterUserId() { return reporterUserId; }
-    public void setReporterUserId(Long reporterUserId) { this.reporterUserId = reporterUserId; }
-    public String getReason() { return reason; }
-    public void setReason(String reason) { this.reason = reason; }
-    public LocalDateTime getCreatedAt() { return createdAt; }
-    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+    public Report(User reportedUser, User reporterUser, String reason, ReportType type) {
+        this(reportedUser, reporterUser, reason);
+        this.type = type;
+    }
 }

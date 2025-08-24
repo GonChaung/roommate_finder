@@ -8,3 +8,7 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+
+# Project-specific files
+src/main/resources/application.properties
+src/main/resources/application-*.properties

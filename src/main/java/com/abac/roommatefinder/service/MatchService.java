@@ -19,7 +19,8 @@ public class MatchService {
     }
 
     public List<Profile> getMatchedProfiles(Long userId) {
-        Profile user = profileRepository.findByUserId(userId).orElseThrow(() -> new IllegalArgumentException("Profile not found"));
+        Profile user = profileRepository.findByUserId(userId)
+                .orElseThrow(() -> new IllegalArgumentException("Profile not found"));
         return profileRepository.findAll().stream()
                 .filter(p -> !Objects.equals(p.getUser().getId(), userId))
                 .sorted(Comparator.comparingDouble((Profile p) -> -calculateMatchScore(user, p)))
@@ -37,13 +38,22 @@ public class MatchService {
 
     public List<Profile> filterProfiles(FilterOptions f) {
         return profileRepository.findAll().stream().filter(p -> {
-            boolean ok = true;
-            if (f.getLocation()!=null && p.getLocation()!=null) ok &= p.getLocation().equalsIgnoreCase(f.getLocation());
-            if (f.getLifestyle()!=null && p.getLifestyle()!=null) ok &= p.getLifestyle().equalsIgnoreCase(f.getLifestyle());
-            if (f.getPetFriendly()!=null && p.getPetFriendly()!=null) ok &= p.getPetFriendly().equals(f.getPetFriendly());
-            if (f.getMinBudget()!=null && p.getBudget()!=null) ok &= p.getBudget() >= f.getMinBudget();
-            if (f.getMaxBudget()!=null && p.getBudget()!=null) ok &= p.getBudget() <= f.getMaxBudget();
-            return ok;
+            if (f.getLocation() != null) {
+                if (p.getLocation() == null || !p.getLocation().equalsIgnoreCase(f.getLocation())) return false;
+            }
+            if (f.getLifestyle() != null) {
+                if (p.getLifestyle() == null || !p.getLifestyle().equalsIgnoreCase(f.getLifestyle())) return false;
+            }
+            if (f.getPetFriendly() != null) {
+                if (p.getPetFriendly() == null || !p.getPetFriendly().equals(f.getPetFriendly())) return false;
+            }
+            if (f.getMinBudget() != null) {
+                if (p.getBudget() == null || p.getBudget() < f.getMinBudget()) return false;
+            }
+            if (f.getMaxBudget() != null) {
+                if (p.getBudget() == null || p.getBudget() > f.getMaxBudget()) return false;
+            }
+            return true;
         }).collect(Collectors.toList());
     }
 }

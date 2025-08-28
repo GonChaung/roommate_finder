@@ -11,8 +11,6 @@ import java.util.List;
 
 @Repository
 public interface ReportRepository extends JpaRepository<Report, Long> {
-    List<Report> findByReportedUserIdAndStatus(Long reportedUserId, ReportStatus status);
-    List<Report> findByReporterUserIdOrderByCreatedAtDesc(Long reporterUserId);
     List<Report> findByStatusOrderByCreatedAtDesc(ReportStatus status);
 
     @Query("SELECT COUNT(r) FROM Report r WHERE r.reportedUser.id = :userId AND r.status = :status")
@@ -27,3 +25,4 @@ public interface ReportRepository extends JpaRepository<Report, Long> {
     @Query("SELECT COUNT(r) FROM Report r WHERE r.reportedUser.id = :userId")
     Long countTotalReportsForUser(@Param("userId") Long userId);
 }
+

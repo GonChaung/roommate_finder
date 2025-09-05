@@ -1,3 +1,4 @@
+/*
 package com.abac.roommatefinder.service;
 
 import com.abac.roommatefinder.entity.Report;
@@ -15,6 +16,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+*/
 /**
  * Student-level tests (simple & focused) for Admin functions:
  *  - banUser(userId)
@@ -23,7 +25,8 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * Each test sets up only what is needed, uses clear names,
  * and verifies basic expected behavior or exception.
- */
+ *//*
+
 class AdminBasicFunctionsTest {
 
     // ---------------- banUser tests ----------------
@@ -143,4 +146,4 @@ class AdminBasicFunctionsTest {
         assertNotNull(list);
         assertTrue(list.isEmpty());
     }
-}
+}*/

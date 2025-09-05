@@ -1,3 +1,4 @@
+
 package com.abac.roommatefinder.service;
 
 import com.abac.roommatefinder.dto.FilterOptions;
@@ -11,19 +12,6 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Basic (student-level) unit tests for matching functions:
- *  1. getMatchedProfiles(userId)
- *  2. calculateMatchScore(userA, userB)
- *  3. filterProfiles(filterOptions)
- *
- * The tests are intentionally simple, with clear setup and assertions.
- *
- * NOTE: These tests assume the MatchService implementation that:
- *  - Excludes the requesting user's own profile from matches.
- *  - Sorts matches from highest score to lowest.
- *  - Uses "strict" filtering: if a filter field is set and the profile field is null or different, it is excluded.
- */
 class MatchingBasicFunctionsTest {
 
     // Helper to create a profile quickly

@@ -32,11 +32,15 @@ public class MatchController {
 
     // calculateMatchScore(userA, userB)
     @GetMapping("/score")
-    public ResponseEntity<?> score(@RequestParam Long userA, @RequestParam Long userB) {
+    public ResponseEntity<?> score(
+            @RequestParam("userA") Long userA,
+            @RequestParam("userB") Long userB) {
         Profile a = profileService.getProfile(userA);
         Profile b = profileService.getProfile(userB);
         double score = matchService.calculateMatchScore(a, b);
-        Map<String, Double> response = new HashMap<>();
+        Map<String, Object> response = new HashMap<>();
+        response.put("userA", userA);
+        response.put("userB", userB);
         response.put("score", score);
         return ResponseEntity.ok(response);
     }

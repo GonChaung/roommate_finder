@@ -1,0 +1,11 @@
+/Users/pandas/Desktop/JavaSpringProjects/roommate-finder-backend-clean/src/test/java/com/abac/roommatefinder/controller/ProfileControllerTest.java
+/Users/pandas/Desktop/JavaSpringProjects/roommate-finder-backend-clean/src/test/java/com/abac/roommatefinder/integration/AuthIntegrationTest.java
+/Users/pandas/Desktop/JavaSpringProjects/roommate-finder-backend-clean/src/test/java/com/abac/roommatefinder/integration/EndToEndBasicFlowTest.java
+/Users/pandas/Desktop/JavaSpringProjects/roommate-finder-backend-clean/src/test/java/com/abac/roommatefinder/service/AdminBasicFunctionsTest.java
+/Users/pandas/Desktop/JavaSpringProjects/roommate-finder-backend-clean/src/test/java/com/abac/roommatefinder/service/AdminServiceTest.java
+/Users/pandas/Desktop/JavaSpringProjects/roommate-finder-backend-clean/src/test/java/com/abac/roommatefinder/service/AuthServiceTest.java
+/Users/pandas/Desktop/JavaSpringProjects/roommate-finder-backend-clean/src/test/java/com/abac/roommatefinder/service/AuthenticationBasicFunctionsTest.java
+/Users/pandas/Desktop/JavaSpringProjects/roommate-finder-backend-clean/src/test/java/com/abac/roommatefinder/service/MatchServiceTest.java
+/Users/pandas/Desktop/JavaSpringProjects/roommate-finder-backend-clean/src/test/java/com/abac/roommatefinder/service/MatchingBasicFunctionsTest.java
+/Users/pandas/Desktop/JavaSpringProjects/roommate-finder-backend-clean/src/test/java/com/abac/roommatefinder/service/ProfileServiceTest.java
+/Users/pandas/Desktop/JavaSpringProjects/roommate-finder-backend-clean/src/test/java/com/abac/roommatefinder/service/UserProfileBasicFunctionsTest.java
